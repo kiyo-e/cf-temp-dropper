@@ -134,6 +134,24 @@ As a rough guide, 1,000 chunks at 4.75 MiB is about 4.6 GiB before accounting fo
 - Generated chunks are static assets. The Worker reconstructs the file for streaming and download; it does not encrypt file contents.
 - Claiming a deployment moves it into a Cloudflare account and may change its lifetime and management model.
 
+## Agent skill
+
+This repository includes a Hermes-compatible skill for agents that need to use `cf-temp-dropper` reliably.
+
+Install it directly from GitHub:
+
+```bash
+hermes skills install https://raw.githubusercontent.com/kiyo-e/cf-temp-dropper/main/skills/cf-temp-dropper/SKILL.md
+```
+
+Or inspect it first:
+
+```bash
+hermes skills inspect https://raw.githubusercontent.com/kiyo-e/cf-temp-dropper/main/skills/cf-temp-dropper/SKILL.md
+```
+
+The skill documents the recommended agent workflow: verify the local file, deploy with `npx`, capture the public and claim URLs, verify `/manifest.json`, and use `/file` for direct curl downloads.
+
 ## Development
 
 ```bash

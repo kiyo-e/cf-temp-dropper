@@ -31,6 +31,22 @@ Claim URL: https://dash.cloudflare.com/claim-preview?claimToken=...
 
 Open the URL to preview supported media or save the verified file.
 
+### Direct download with curl
+
+The generated Worker also exposes the original file at `/file`, so command-line download works without using the browser UI:
+
+```bash
+curl -L -o movie.mp4 https://<your-worker>.workers.dev/file
+```
+
+Resume an interrupted download with curl's continue mode:
+
+```bash
+curl -L -C - -o movie.mp4 https://<your-worker>.workers.dev/file
+```
+
+`/file` is served with `Content-Disposition: inline` so browsers can preview media. Because of that, `curl -OJ https://.../file` may save the file as `file` instead of the original filename. Use `-o <filename>` when you want a predictable local name.
+
 ## Requirements
 
 - Node.js 22 or newer

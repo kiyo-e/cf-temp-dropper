@@ -34,6 +34,14 @@
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiyo-e/cf-temp-dropper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kiyo-e/cf-temp-dropper/issues"
+  },
+  "homepage": "https://github.com/kiyo-e/cf-temp-dropper#readme",
   "engines": {
     "node": ">=22"
   },

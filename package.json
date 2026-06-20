@@ -1,0 +1,51 @@
+{
+  "name": "cf-temp-dropper",
+  "version": "0.1.0",
+  "description": "Create temporary Cloudflare-hosted file drops from local files.",
+  "type": "module",
+  "bin": {
+    "cf-temp-dropper": "dist/cli.js",
+    "cf-temp-drop": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "smoke": "npm run build && node dist/cli.js fixtures/sample.txt --no-deploy --out .tmp/smoke --yes",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "workers-static-assets",
+    "wrangler",
+    "temporary",
+    "hono",
+    "file-share",
+    "file-transfer",
+    "static-assets"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "hono": "^4.10.7",
+    "mime-types": "^3.0.2",
+    "wrangler": "^4.56.1"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

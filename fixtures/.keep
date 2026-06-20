@@ -1,0 +1,1 @@
+老師、これは Cloudflare の temporary accounts / `wrangler deploy --temporary` を使う前提で、まず実装まで進めています。いま NPX CLI のローカルパッケージを作成中です。次にビルド・スモークテストまで通します。

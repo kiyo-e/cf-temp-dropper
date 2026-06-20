@@ -1,0 +1,1 @@
+hello from cf-temp-dropper smoke test
